@@ -1,17 +1,25 @@
-# Semana 05
+# Descrição
 
-### Links:
+Para estruturação do código, utilizei o haar_cascade para fazer o modelo detecção das faces, além de utilizar o código de reproduzir_video.py como base. Para isso, segui os seguintes passos:
 
-Video: [https://drive.google.com/file/d/1GWr_yMHBby3RLEVzIpaB5l9KLhjZo4OH/view?usp=share_link](https://drive.google.com/file/d/1GWr_yMHBby3RLEVzIpaB5l9KLhjZo4OH/view?usp=share_link)
+1. Importei o vídeo em questão;
+2. Peguei o tamnho do video de largura e altura.
+3. Importei o haar_cascade.xml
+4. Defini o size do video;
+5. Define o codec e cria o arquivo de video de saida
 
-Notebook: [https://colab.research.google.com/drive/16dx94nR-vl7ccJhxRIZRI7oDtVbxk7gd?usp=sharing](https://colab.research.google.com/drive/16dx94nR-vl7ccJhxRIZRI7oDtVbxk7gd?usp=sharing)
+Depois criei um laço de loop do tipo While, para pegar e rodar cada frame recebido. E realizei a seguinte operação:
 
-### Descrição:
+1. Le o frame de entrada;
+2. Verifiquei com um If se conseguiu ler o frame;
+3. Tranformei a imagem em cinza;
+4. Utilizei o haar_cascade para fazer a detecção multipla na imagem em cinza;
+5. Criei um for responsavel por desenhar o retangulo de marcação na face;
+6. Salvei o video de saida
+7. E exibi o vídeo em tempo real;
+8. Coloquei uma tecla de saida na letra Q do teclado
+9. E setei para fechar as janelas
 
-Para a elaboração da atividade desta semana, foi necessário aplicar dois tipos de conhecimento vistos: a utilização do OpenCV e o YOLO.
+Dessa forma resultado em:
 
-Para começar, criei um arquivo no Colab para ter um ambiente de trabalho melhor. A primeira etapa foi criar uma célula para verificar o acesso à GPU e usá-la. Em seguida, fiz a instalação e importação do YOLO, pois ele será responsável por treinar e criar nosso modelo de predição. Para confirmar se a biblioteca estava funcionando, criei uma parte de teste para detecção de cachorros e verifiquei as métricas do modelo.
-
-Após a confirmação de funcionamento, comecei a trabalhar na importação do dataset do Roboflow de rachaduras (crack). Como tinha visto que o teste anterior estava bom, utilizei-o como base para o de rachaduras. Realizei o treinamento e, em seguida, dei uma olhada nas métricas para verificar se havia necessidade de melhorar (no caso, não havia) e vi os resultados obtidos.
-
-Por fim, criei um arquivo main.py, onde utilizei o OpenCV para acessar a câmera e utilizar o modelo na detecção de rachaduras durante o vídeo.
+![1686943777235](image/README/1686943777235.png)
